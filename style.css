@@ -1,0 +1,1063 @@
+
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #100b12;
+    color: #f8edf3;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+button {
+    font: inherit;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ========================================
+   TYPOGRAPHY
+======================================== */
+
+h1,
+h2,
+h3 {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: clamp(5rem, 18vw, 11rem);
+}
+
+h2 {
+    font-size: clamp(3rem, 8vw, 7rem);
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+p {
+    color: #cdbfc7;
+}
+
+span {
+    color: #f29ab8;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 0.72rem;
+    color: #d988a6;
+    margin-bottom: 1.5rem;
+}
+
+
+/* ========================================
+   INTRO
+======================================== */
+
+.intro {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(180, 73, 111, 0.18),
+            transparent 45%
+        ),
+        #100b12;
+}
+
+.intro-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 700px;
+    padding: 2rem;
+}
+
+.intro h1 {
+    color: #fff4f8;
+    margin-bottom: 1.5rem;
+}
+
+.intro-text {
+    max-width: 450px;
+    margin: 0 auto 2.5rem;
+
+    font-size: 1.1rem;
+}
+
+.start-btn,
+.surprise-btn {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    background: #f29ab8;
+    color: #1b0c13;
+
+    padding: 1rem 2rem;
+
+    border-radius: 999px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.start-btn:hover,
+.surprise-btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(242, 154, 184, 0.25);
+}
+
+.small-note {
+    margin-top: 1.5rem;
+
+    font-size: 0.75rem;
+
+    opacity: 0.5;
+}
+
+
+/* ========================================
+   FLOATING HEARTS
+======================================== */
+
+.floating-heart {
+    position: absolute;
+
+    color: rgba(242, 154, 184, 0.2);
+
+    font-size: 4rem;
+
+    animation:
+        float 6s ease-in-out infinite;
+}
+
+.heart-one {
+    top: 20%;
+    left: 10%;
+}
+
+.heart-two {
+    right: 12%;
+    top: 30%;
+
+    animation-delay: 2s;
+}
+
+.heart-three {
+    bottom: 15%;
+    left: 25%;
+
+    animation-delay: 4s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-25px)
+            rotate(10deg);
+    }
+}
+
+
+/* ========================================
+   GENERAL SECTIONS
+======================================== */
+
+.section {
+    min-height: 100vh;
+
+    padding: 10rem 8%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.section-heading {
+    max-width: 800px;
+
+    margin-bottom: 6rem;
+}
+
+.section-heading p {
+    max-width: 600px;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 75% 40%,
+            rgba(150, 50, 90, 0.25),
+            transparent 40%
+        );
+}
+
+.hero-content {
+    max-width: 1000px;
+}
+
+.hero h2 {
+    font-size: clamp(4rem, 11vw, 10rem);
+}
+
+.hero-description {
+    max-width: 550px;
+
+    margin-top: 2rem;
+
+    font-size: 1.2rem;
+}
+
+.scroll-indicator {
+    margin-top: 6rem;
+
+    display: flex;
+
+    gap: 1rem;
+
+    flex-direction: column;
+
+    color: #887b83;
+
+    font-size: 0.8rem;
+}
+
+
+/* ========================================
+   TIMELINE
+======================================== */
+
+.timeline {
+    max-width: 900px;
+
+    position: relative;
+
+    margin: 0 auto;
+
+    width: 100%;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 12px;
+
+    top: 0;
+    bottom: 0;
+
+    width: 1px;
+
+    background:
+        rgba(242, 154, 184, 0.3);
+}
+
+.timeline-item {
+    position: relative;
+
+    padding-left: 4rem;
+
+    margin-bottom: 5rem;
+}
+
+.timeline-dot {
+    position: absolute;
+
+    left: 5px;
+    top: 5px;
+
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+
+    background: #f29ab8;
+
+    box-shadow:
+        0 0 25px rgba(242, 154, 184, 0.6);
+}
+
+.timeline-card {
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    padding: 2rem;
+
+    border-radius: 20px;
+}
+
+.timeline-year {
+    font-size: 0.75rem;
+
+    letter-spacing: 0.2em;
+
+    color: #d988a6;
+}
+
+.timeline-card h3 {
+    margin: 0.7rem 0;
+}
+
+
+/* ========================================
+   TRAITS
+======================================== */
+
+.traits {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 2rem;
+
+    max-width: 1100px;
+}
+
+.trait {
+    padding: 3rem;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 24px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    transition:
+        0.4s ease;
+}
+
+.trait:hover {
+    transform: translateY(-8px);
+
+    background:
+        rgba(255, 255, 255, 0.05);
+}
+
+.trait-number {
+    font-size: 0.7rem;
+
+    color: #d988a6;
+}
+
+.trait h3 {
+    margin: 1rem 0;
+}
+
+
+/* ========================================
+   MANCHESTER UNITED SECTION
+======================================== */
+
+.united-section {
+    min-height: 120vh;
+
+    padding: 10rem 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(150, 10, 30, 0.3),
+            transparent 45%
+        ),
+        linear-gradient(
+            180deg,
+            #100b12,
+            #16070a,
+            #100b12
+        );
+}
+
+.united-section::before {
+    content: "MANCHESTER UNITED";
+
+    position: absolute;
+
+    font-size: clamp(4rem, 15vw, 14rem);
+
+    font-weight: 700;
+
+    color: rgba(255, 255, 255, 0.015);
+
+    white-space: nowrap;
+
+    transform: rotate(-8deg);
+
+    pointer-events: none;
+}
+
+.united-content {
+    max-width: 900px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.united-badge {
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 3rem;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 2.5rem;
+
+    background:
+        rgba(150, 10, 30, 0.2);
+
+    border:
+        1px solid rgba(220, 30, 50, 0.4);
+
+    box-shadow:
+        0 0 50px rgba(150, 10, 30, 0.25);
+}
+
+.united-content h2 {
+    font-size: clamp(4rem, 11vw, 9rem);
+
+    text-transform: uppercase;
+}
+
+.united-content h2 span {
+    display: block;
+
+    color: #e63946;
+}
+
+.united-story {
+    max-width: 650px;
+
+    margin: 4rem auto 0;
+}
+
+.united-story p {
+    margin-bottom: 1.5rem;
+
+    font-size: 1.15rem;
+}
+
+.united-punchline {
+    margin-top: 4rem;
+
+    color: #fff;
+
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-size: 2rem !important;
+}
+
+.united-stats {
+    max-width: 700px;
+
+    margin: 5rem auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 1rem;
+}
+
+.united-stat {
+    padding: 2rem 1rem;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    border-radius: 15px;
+}
+
+.united-stat strong {
+    display: block;
+
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-size: 2.5rem;
+
+    color: #e63946;
+}
+
+.united-stat span {
+    color: #aaa;
+
+    font-size: 0.75rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.1em;
+}
+
+.united-quote {
+    margin: 5rem auto;
+
+    padding: 3rem;
+
+    max-width: 600px;
+
+    border-top:
+        1px solid rgba(230, 57, 70, 0.3);
+
+    border-bottom:
+        1px solid rgba(230, 57, 70, 0.3);
+}
+
+.united-quote p {
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-size: 3rem;
+
+    color: #fff;
+}
+
+.united-quote span {
+    color: #8f858a;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+}
+
+.united-ending {
+    margin: 5rem auto;
+
+    max-width: 600px;
+}
+
+.united-ending p {
+    margin-bottom: 1rem;
+}
+
+.united-ending strong {
+    color: #fff;
+}
+
+.united-final {
+    margin-top: 7rem;
+}
+
+.united-final p {
+    font-size: 1.1rem;
+
+    margin-bottom: 1rem;
+}
+
+.united-final h3 {
+    margin: 1rem 0 2rem;
+
+    color: #e63946;
+
+    font-size: clamp(2.5rem, 6vw, 5rem);
+}
+
+
+/* ========================================
+   LAPTOP STORY
+======================================== */
+
+.story-section {
+    background:
+        linear-gradient(
+            180deg,
+            #100b12,
+            #170c13,
+            #100b12
+        );
+}
+
+.story-container {
+    max-width: 900px;
+
+    margin: auto;
+}
+
+.story-container h2 {
+    max-width: 800px;
+}
+
+.story {
+    margin-top: 4rem;
+
+    max-width: 650px;
+}
+
+.story p {
+    margin-bottom: 2rem;
+
+    font-size: 1.1rem;
+}
+
+.story-highlight {
+    margin-top: 4rem;
+
+    padding: 3rem;
+
+    border-left:
+        3px solid #f29ab8;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.5rem;
+}
+
+.story-highlight span {
+    font-size: 0.7rem;
+
+    letter-spacing: 0.2em;
+}
+
+.story-highlight strong {
+    font-size: 1.5rem;
+}
+
+
+/* ========================================
+   THAT NIGHT
+======================================== */
+
+.night-section {
+    min-height: 120vh;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(65, 40, 85, 0.35),
+            transparent 50%
+        ),
+        #08070b;
+
+    text-align: center;
+}
+
+.night-content {
+    max-width: 750px;
+
+    margin: auto;
+}
+
+.night-story {
+    margin-top: 4rem;
+}
+
+.night-story p {
+    margin-bottom: 2rem;
+
+    font-size: 1.15rem;
+}
+
+.night-story .emphasis {
+    color: #f29ab8;
+
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-size: 2rem;
+}
+
+.night-story h3 {
+    margin: 4rem 0 2rem;
+
+    font-size: 4rem;
+
+    color: #fff;
+}
+
+
+/* ========================================
+   MISSING PHOTOS
+======================================== */
+
+.empty-gallery {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 1.5rem;
+}
+
+.photo-placeholder {
+    aspect-ratio: 1;
+
+    border:
+        1px dashed rgba(242, 154, 184, 0.3);
+
+    border-radius: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(255, 255, 255, 0.02);
+}
+
+.photo-placeholder span {
+    font-size: 3rem;
+
+    margin-bottom: 1rem;
+}
+
+.photo-placeholder p {
+    font-size: 0.8rem;
+}
+
+.memory-note {
+    text-align: center;
+
+    margin-top: 4rem;
+
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-size: 2rem;
+}
+
+
+/* ========================================
+   GRATITUDE
+======================================== */
+
+.gratitude-section {
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(242, 154, 184, 0.12),
+            transparent 45%
+        );
+}
+
+.gratitude {
+    max-width: 850px;
+
+    margin: auto;
+}
+
+.gratitude-text {
+    margin-top: 4rem;
+}
+
+.gratitude-text p {
+    font-size: 1.25rem;
+
+    margin-bottom: 1.5rem;
+}
+
+.final-thought {
+    margin-top: 5rem;
+}
+
+.final-thought p {
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    color: #f29ab8;
+
+    font-size: 2rem;
+}
+
+
+/* ========================================
+   BIRTHDAY
+======================================== */
+
+.birthday-section {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(190, 61, 107, 0.3),
+            transparent 50%
+        ),
+        #160912;
+}
+
+.birthday-content {
+    max-width: 900px;
+
+    padding: 2rem;
+}
+
+.birthday-content h2 {
+    font-size:
+        clamp(4rem, 12vw, 10rem);
+}
+
+.birthday-content h2 span {
+    display: block;
+}
+
+.late-message {
+    margin-top: 3rem;
+
+    font-size: 1.5rem;
+}
+
+.birthday-message {
+    max-width: 550px;
+
+    margin: 2rem auto 3rem;
+}
+
+
+/* ========================================
+   FINAL
+======================================== */
+
+.final-section {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(242, 154, 184, 0.2),
+            transparent 50%
+        );
+}
+
+.final-content {
+    max-width: 900px;
+}
+
+.confetti {
+    font-size: 5rem;
+
+    margin-bottom: 2rem;
+}
+
+.final-content h2 {
+    font-size:
+        clamp(3rem, 8vw, 7rem);
+}
+
+.final-content p {
+    margin-top: 2rem;
+
+    font-size: 1.5rem;
+}
+
+.small-final {
+    font-size: 0.85rem !important;
+
+    opacity: 0.5;
+}
+
+
+/* ========================================
+   MUSIC BUTTON
+======================================== */
+
+.music-toggle {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    background:
+        rgba(30, 15, 24, 0.8);
+
+    color: #f29ab8;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+
+    z-index: 100;
+}
+
+
+/* ========================================
+   SCROLL REVEAL
+======================================== */
+
+.reveal {
+    opacity: 0;
+
+    transform:
+        translateY(40px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .section {
+        padding: 7rem 7%;
+    }
+
+    .traits {
+        grid-template-columns: 1fr;
+    }
+
+    .empty-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .night-story h3 {
+        font-size: 3rem;
+    }
+
+    .story-highlight {
+        padding: 2rem;
+    }
+
+    .timeline-item {
+        padding-left: 3rem;
+    }
+
+    .united-section {
+        padding: 7rem 7%;
+    }
+
+    .united-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .united-quote p {
+        font-size: 2.3rem;
+    }
+
+}
